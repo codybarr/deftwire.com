@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans
+  /* background-image: url('../images/image.svg'); */
+  /* background-size: 300px 300px; */
+  /* background-origin: 'border-box'; */;
+}
+
+.mdx-content {
+  background-color: @apply font-open-sans;
+}
+
+.mdx-content h1 {
+  @apply font-marker;
+}
