@@ -1,32 +1,65 @@
 import React, { useState } from 'react'
 
-// const fetchTags = async (url) => {
-//   const res = await fetch(
-//     `https://meta-fetch.vercel.app/api/metafetch/${encodeURIComponent(url)}`
-//   )
-//   const tags = await res.json()
-//   // return tags
-//   console.log(tags)
-// }
+function fetchTags(url, setMeta, onChange) {
+  fetch(
+    `https://meta-fetch.vercel.app/api/metafetch/${encodeURIComponent(url)}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json)
+      const tags = { ...json, url }
+      setMeta(tags)
+      onChange(tags)
+    })
+}
 
 // This is the editing component
-export const MetaControl = ({ value, field, forId, onChange }) => {
+export const MetaControl = ({
+  value,
+  field,
+  forId,
+  onChange,
+  classNameWrapper,
+}) => {
   const [meta, setMeta] = useState(value || {})
 
+  console.log('meta', meta)
+
   return (
-    <div>
+    <div className={classNameWrapper}>
       <input
         type="text"
         placeholder="Enter URL"
         value={meta.url}
         onChange={(e) => setMeta({ ...meta, url: e.target.value })}
       />
-      <button type="button" onClick={(e) => console.log('bargle')}>
+      <button
+        className={classNameWrapper}
+        type="button"
+        onClick={(e) => fetchTags(meta.url, setMeta, onChange)}
+      >
         Fetch Tags
       </button>
-      <input type="text" placeholder="Enter Title" />
-      <textarea placeholder="Enter Description" />
-      <input type="text" placeholder="Enter Image" />
+      <input
+        className={classNameWrapper}
+        type="text"
+        placeholder="Enter Title"
+        value={meta.title}
+        onChange={(e) => setMeta({ ...meta, title: e.target.value })}
+      />
+      <textarea
+        className={classNameWrapper}
+        placeholder="Enter Description"
+        value={meta.description}
+        onChange={(e) => setMeta({ ...meta, description: e.target.value })}
+      />
+      <input
+        className={classNameWrapper}
+        type="text"
+        placeholder="Enter Image"
+        value={meta.image}
+        onChange={(e) => setMeta({ ...meta, image: e.target.value })}
+      />
     </div>
   )
 }
