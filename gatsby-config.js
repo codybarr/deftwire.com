@@ -13,7 +13,17 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-netlify-cms',
+    // 'gatsby-plugin-netlify-cms',
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        /**
+         * One convention is to place your Netlify CMS customization code in a
+         * `src/cms` directory.
+         */
+        modulePath: path.resolve(__dirname, 'src/cms/cms.js'),
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

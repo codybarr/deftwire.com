@@ -35,4 +35,4 @@ collections:
       - { label: 'Post Description', name: 'description', widget: 'text' }
       - name: meta
         label: Meta
-        widget: meta
+        widget: 'metatags'

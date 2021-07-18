@@ -1,8 +1,11 @@
+const path = require('path')
+
 module.exports = {
   mode: 'development',
   entry: './cms/cms.js',
   output: {
-    filename: './dist/admin/cms.js',
+    filename: 'cms.js',
+    path: path.resolve(__dirname, 'static/admin'),
   },
   module: {
     rules: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }],

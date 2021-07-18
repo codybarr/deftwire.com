@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-const fetchTags = async (targetUrl) => {
-  const res = await fetch(
-    `https://meta-fetch.vercel.app/api/meta/${encodeURIComponent(targetUrl)}`
-  )
-  const tags = await res.json()
-  return tags
-}
+// const fetchTags = async (url) => {
+//   const res = await fetch(
+//     `https://meta-fetch.vercel.app/api/metafetch/${encodeURIComponent(url)}`
+//   )
+//   const tags = await res.json()
+//   // return tags
+//   console.log(tags)
+// }
 
 // This is the editing component
 export const MetaControl = ({ value, field, forId, onChange }) => {
@@ -14,8 +15,13 @@ export const MetaControl = ({ value, field, forId, onChange }) => {
 
   return (
     <div>
-      <input type="text" placeholder="Enter URL" />
-      <button type="button" onClick={(e) => fetchTags()}>
+      <input
+        type="text"
+        placeholder="Enter URL"
+        value={meta.url}
+        onChange={(e) => setMeta({ ...meta, url: e.target.value })}
+      />
+      <button type="button" onClick={(e) => console.log('bargle')}>
         Fetch Tags
       </button>
       <input type="text" placeholder="Enter Title" />
