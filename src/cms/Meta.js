@@ -31,6 +31,7 @@ export const MetaControl = ({
         type="text"
         placeholder="Enter URL"
         value={meta.url}
+        id={`${forId}_url`}
         onChange={(e) => setMeta({ ...meta, url: e.target.value })}
       />
       <button
@@ -45,12 +46,14 @@ export const MetaControl = ({
         type="text"
         placeholder="Enter Title"
         value={meta.title}
+        id={`${forId}_title`}
         onChange={(e) => setMeta({ ...meta, title: e.target.value })}
       />
       <textarea
         className={classNameWrapper}
         placeholder="Enter Description"
         value={meta.description}
+        id={`${forId}_description`}
         onChange={(e) => setMeta({ ...meta, description: e.target.value })}
       />
       <input
@@ -58,6 +61,7 @@ export const MetaControl = ({
         type="text"
         placeholder="Enter Image"
         value={meta.image}
+        id={`${forId}_image`}
         onChange={(e) => setMeta({ ...meta, image: e.target.value })}
       />
     </div>
