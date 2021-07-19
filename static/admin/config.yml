@@ -19,6 +19,6 @@ collections:
         label: title
         widget: string
         required: false
-      - name: meta
+      - name: meta_tags
         label: Meta
         widget: 'metatags'

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Map } from 'immutable'
 
 function fetchTags(url, setMeta, onChange) {
   fetch(
@@ -9,7 +10,7 @@ function fetchTags(url, setMeta, onChange) {
       console.log(json)
       const tags = { ...json, url }
       setMeta(tags)
-      onChange(tags)
+      onChange(Map(tags))
     })
 }
 
@@ -17,7 +18,7 @@ function fetchTags(url, setMeta, onChange) {
 export const MetaControl = ({
   value,
   field,
-  forId,
+  forID,
   onChange,
   classNameWrapper,
 }) => {
@@ -31,7 +32,7 @@ export const MetaControl = ({
         type="text"
         placeholder="Enter URL"
         value={meta.url}
-        id={`${forId}_url`}
+        id={`${forID}_url`}
         onChange={(e) => setMeta({ ...meta, url: e.target.value })}
       />
       <button
@@ -46,14 +47,14 @@ export const MetaControl = ({
         type="text"
         placeholder="Enter Title"
         value={meta.title}
-        id={`${forId}_title`}
+        id={`${forID}_title`}
         onChange={(e) => setMeta({ ...meta, title: e.target.value })}
       />
       <textarea
         className={classNameWrapper}
         placeholder="Enter Description"
         value={meta.description}
-        id={`${forId}_description`}
+        id={`${forID}_description`}
         onChange={(e) => setMeta({ ...meta, description: e.target.value })}
       />
       <input
@@ -61,7 +62,7 @@ export const MetaControl = ({
         type="text"
         placeholder="Enter Image"
         value={meta.image}
-        id={`${forId}_image`}
+        id={`${forID}_image`}
         onChange={(e) => setMeta({ ...meta, image: e.target.value })}
       />
     </div>
