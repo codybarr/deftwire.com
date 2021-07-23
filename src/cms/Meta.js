@@ -29,6 +29,7 @@ export const MetaControl = ({
   return (
     <div className={classNameWrapper}>
       <input
+        className={classNameWrapper}
         type="text"
         placeholder="Enter URL"
         value={meta.url}
@@ -46,9 +47,11 @@ export const MetaControl = ({
         className={classNameWrapper}
         type="text"
         placeholder="Enter Title"
+        name="tags.title"
         value={meta.title}
         id={`${forID}_title`}
         onChange={(e) => setMeta({ ...meta, title: e.target.value })}
+        required
       />
       <textarea
         className={classNameWrapper}

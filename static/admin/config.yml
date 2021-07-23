@@ -3,6 +3,9 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
+# when using the default proxy server port
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
@@ -11,14 +14,17 @@ collections:
     label: 'Post'
     folder: 'content/posts'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    preview_path_date_field: date
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    identifier_field: tags.title
+    sortable_fields: ['date', 'tags.title']
     editor:
       preview: false
     fields:
-      - name: title
-        label: title
-        widget: string
-        required: false
-      - name: meta_tags
+      - name: date
+        label: Post Date
+        widget: date
+        format: YYYY-MM-DD
+      - name: tags
         label: Meta
         widget: 'metatags'
