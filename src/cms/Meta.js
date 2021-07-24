@@ -1,30 +1,36 @@
 import React, { useState } from 'react'
 import { Map } from 'immutable'
 
-function fetchTags(url, setMeta, onChange) {
+function fetchTags(url, onChange) {
   fetch(
     `https://meta-fetch.vercel.app/api/metafetch/${encodeURIComponent(url)}`
   )
     .then((res) => res.json())
     .then((json) => {
-      console.log(json)
+      console.log('json', json)
       const tags = { ...json, url }
-      setMeta(tags)
+      // updateTags(setMeta, onChange, tags)
       onChange(Map(tags))
     })
 }
 
+// function updateTags(setMeta, onChange, tags) {
+//   const newTags = Map(tags)
+//   // setMeta(newTags)
+//   onChange(newTags)
+// }
+
 // This is the editing component
 export const MetaControl = ({
-  value,
+  value = Map({}),
   field,
   forID,
   onChange,
   classNameWrapper,
 }) => {
-  const [meta, setMeta] = useState(value || {})
+  // const [meta, setMeta] = useState(value || Map({}))
 
-  console.log('meta', meta)
+  console.log('value', value)
 
   return (
     <div className={classNameWrapper}>
@@ -32,14 +38,14 @@ export const MetaControl = ({
         className={classNameWrapper}
         type="text"
         placeholder="Enter URL"
-        value={meta.url}
+        value={value.get('url')}
         id={`${forID}_url`}
-        onChange={(e) => setMeta({ ...meta, url: e.target.value })}
+        onChange={(e) => onChange(value.set('url', e.target.value))}
       />
       <button
         className={classNameWrapper}
         type="button"
-        onClick={(e) => fetchTags(meta.url, setMeta, onChange)}
+        onClick={(e) => fetchTags(value.get('url'), onChange)}
       >
         Fetch Tags
       </button>
@@ -48,25 +54,25 @@ export const MetaControl = ({
         type="text"
         placeholder="Enter Title"
         name="tags.title"
-        value={meta.title}
+        value={value.get('title')}
         id={`${forID}_title`}
-        onChange={(e) => setMeta({ ...meta, title: e.target.value })}
+        onChange={(e) => onChange(value.set('title', e.target.value))}
         required
       />
       <textarea
         className={classNameWrapper}
         placeholder="Enter Description"
-        value={meta.description}
+        value={value.get('description')}
         id={`${forID}_description`}
-        onChange={(e) => setMeta({ ...meta, description: e.target.value })}
+        onChange={(e) => onChange(value.set('description', e.target.value))}
       />
       <input
         className={classNameWrapper}
         type="text"
         placeholder="Enter Image"
-        value={meta.image}
+        value={value.get('image')}
         id={`${forID}_image`}
-        onChange={(e) => setMeta({ ...meta, image: e.target.value })}
+        onChange={(e) => onChange(value.set('image', e.target.value))}
       />
     </div>
   )

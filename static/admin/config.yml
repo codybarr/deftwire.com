@@ -14,10 +14,10 @@ collections:
     label: 'Post'
     folder: 'content/posts'
     create: true
-    preview_path_date_field: date
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{date}}-{{slug}}'
     identifier_field: tags.title
     sortable_fields: ['date', 'tags.title']
+    summary: '{{date}} - {{tags.title}}'
     editor:
       preview: false
     fields:
