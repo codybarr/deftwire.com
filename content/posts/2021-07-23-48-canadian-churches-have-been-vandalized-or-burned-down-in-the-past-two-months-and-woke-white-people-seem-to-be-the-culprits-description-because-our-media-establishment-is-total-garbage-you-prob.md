@@ -1,5 +1,5 @@
 ---
-date: 2021-07-24
+date: 2021-07-24T04:01:00.000Z
 tags:
   title: 48 Canadian churches have been vandalized or burned down in the past two
     months, and woke white people seem to be the culprits

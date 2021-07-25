@@ -8,11 +8,13 @@ module.exports = {
         deft: {
           light: '#395a74',
           DEFAULT: '#015183',
+          dark: 'rgb(27, 32, 42)',
         },
       },
       fontFamily: {
-        marker: ['Permanent Marker'],
-        sancreek: ['Sancreek'],
+        teko: ['Teko'],
+        oswald: ['Oswald'],
+        changa: ['Changa'],
         'open-sans': ['Open Sans'],
       },
       minWidth: {

@@ -22,7 +22,7 @@ const Footer = ({ location }) => (
         }}
       >
         <a href="https://gab.com/deftwire" target="_blank">
-          <GabText className="h-10 w-auto fill-curren" />
+          <GabText className="h-10 w-auto fill-current" />
         </a>
       </motion.div>
     </AnimatePresence>

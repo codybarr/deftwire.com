@@ -8,23 +8,25 @@ local_backend: true
 
 media_folder: static/img
 public_folder: /img
+display_url: https://deftwire.com
 
 collections:
   - name: 'post'
     label: 'Post'
     folder: 'content/posts'
     create: true
-    slug: '{{date}}-{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}_{{tags.title}}'
     identifier_field: tags.title
-    sortable_fields: ['date', 'tags.title']
     summary: '{{date}} - {{tags.title}}'
+    sortable_fields: ['date', tags.title', 'commit_author']
     editor:
       preview: false
     fields:
       - name: date
         label: Post Date
-        widget: date
-        format: YYYY-MM-DD
+        widget: datetime
+        date_format: true
+        time_format: true
       - name: tags
         label: Meta
         widget: 'metatags'

@@ -13,7 +13,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
-    // 'gatsby-plugin-netlify-cms',
+    'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -64,6 +64,13 @@ module.exports = {
         path: './src/images/',
       },
       __key: 'images',
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts/`,
+      },
     },
     {
       resolve: 'gatsby-plugin-mdx',

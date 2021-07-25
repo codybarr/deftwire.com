@@ -3,29 +3,30 @@ import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
 import { StaticImage } from 'gatsby-plugin-image'
 
+import Wire from '@/images/wire.inline.svg'
+
 import Navbar from '@/components/navbar'
 
 // GatsbyImageSharpFixed_tracedSVG
 
 const Header = () => (
-  <header className="p-6 pb-0 flex flex-col justify-center md:flex-row">
-    <div className="text-center">
-      <motion.div
-        whileHover={{ scale: 1.1, rotate: -10 }}
-        whileTap={{ scale: 1.2, rotate: -15 }}
-      >
-        <Link to="/">
-          {/* <StaticImage
-            width={150}
-            placeholder="tracedSVG"
-            tracedSVGOptions={{ color: '#f9dc00' }}
-            src="../images/deft.png"
-            alt="Deft Wire"
-          /> */}
+  <header className="text-white">
+    <div className="p-4 flex flex-col justify-between items-center md:flex-row bg-deft">
+      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }}>
+        <Link to="/" className="flex items-center justify-center space-x-4">
+          <Wire className="h-10 w-10 fill-current text-white tranform rotate-90" />
+          <h1 className="font-teko text-6xl whitespace-nowrap uppercase transform translate-y-1">
+            Deft Wire
+          </h1>
         </Link>
       </motion.div>
+      <Navbar />
     </div>
-    <Navbar />
+    <div className="px-4 py-2 flex flex-col items-start bg-deft-dark">
+      <span className="font-teko uppercase text-2xl font-bold tracking-wide whitespace-nowrap">
+        Drink Fresh, Current, Real News
+      </span>
+    </div>
   </header>
 )
 

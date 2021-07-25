@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans
+  @apply font-open-sans;
   /* background-image: url('../images/image.svg'); */
   /* background-size: 300px 300px; */
-  /* background-origin: 'border-box'; */;
+  /* background-origin: 'border-box'; */
 }
 
-.mdx-content {
+/* .mdx-content {
   background-color: @apply font-open-sans;
 }
 
 .mdx-content h1 {
-  @apply font-marker;
-}
+  @apply font-teko;
+} */

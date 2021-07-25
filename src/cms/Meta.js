@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Map } from 'immutable'
 
 function fetchTags(url, onChange) {
@@ -7,18 +7,10 @@ function fetchTags(url, onChange) {
   )
     .then((res) => res.json())
     .then((json) => {
-      console.log('json', json)
       const tags = { ...json, url }
-      // updateTags(setMeta, onChange, tags)
       onChange(Map(tags))
     })
 }
-
-// function updateTags(setMeta, onChange, tags) {
-//   const newTags = Map(tags)
-//   // setMeta(newTags)
-//   onChange(newTags)
-// }
 
 // This is the editing component
 export const MetaControl = ({
@@ -28,10 +20,6 @@ export const MetaControl = ({
   onChange,
   classNameWrapper,
 }) => {
-  // const [meta, setMeta] = useState(value || Map({}))
-
-  console.log('value', value)
-
   return (
     <div className={classNameWrapper}>
       <input
