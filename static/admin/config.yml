@@ -6,11 +6,23 @@ backend:
 # when using the default proxy server port
 local_backend: true
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/images
+public_folder: /images
 display_url: https://deftwire.com
 
 collections:
+  - name: 'author'
+    label: 'Author'
+    folder: 'content/authors'
+    create: true
+    identifier_field: name
+    fields:
+      - name: name
+        label: Full Name
+      - name: avatar
+        label: Avatar Image
+        hint: Upload a square image please!
+        widget: image
   - name: 'post'
     label: 'Post'
     folder: 'content/posts'
@@ -22,6 +34,12 @@ collections:
     editor:
       preview: false
     fields:
+      - name: 'author'
+        label: 'Post Author'
+        widget: 'relation'
+        collection: 'authors'
+        search_fields: ['name']
+        value_field: 'name'
       - name: date
         label: Post Date
         widget: datetime
