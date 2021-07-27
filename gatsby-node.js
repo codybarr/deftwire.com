@@ -1,4 +1,19 @@
-var metaget = require('metaget')
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+//   const typeDefs = `
+//     type MarkdownRemark implements Node @infer {
+//       frontmatter: Frontmatter!
+//     }
+//     type Frontmatter @infer {
+//       title: String!
+//       url: String!
+//       image: String!
+//       date: Date! @dateformat
+//       author: AuthorsJson @link(by: "email", from: "author")
+//     }
+//   `
+//   createTypes(typeDefs)
+// }
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   // const { createNode } = actions

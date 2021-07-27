@@ -16,9 +16,15 @@ collections:
     folder: 'content/authors'
     create: true
     identifier_field: name
+    editor:
+      preview: false
     fields:
       - name: name
         label: Full Name
+        widget: string
+      - name: email
+        label: Email
+        widget: string
       - name: avatar
         label: Avatar Image
         hint: Upload a square image please!
@@ -27,19 +33,23 @@ collections:
     label: 'Post'
     folder: 'content/posts'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}_{{tags.title}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{tags.title}}'
     identifier_field: tags.title
     summary: '{{date}} - {{tags.title}}'
     sortable_fields: ['date', tags.title', 'commit_author']
     editor:
       preview: false
     fields:
-      - name: 'author'
-        label: 'Post Author'
-        widget: 'relation'
-        collection: 'authors'
-        search_fields: ['name']
-        value_field: 'name'
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'author',
+          value_field: 'email',
+          display_fields: ['name'],
+          search_fields: ['name', 'email'],
+          default: 'Gabe Rench',
+        }
       - name: date
         label: Post Date
         widget: datetime

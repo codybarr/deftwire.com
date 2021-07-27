@@ -1,4 +1,5 @@
 ---
+author: waterboy@crosspolitic.com
 date: 2021-07-24T04:59:00.000Z
 tags:
   title: Michigan Gov. Whitmer stripped of emergency powers

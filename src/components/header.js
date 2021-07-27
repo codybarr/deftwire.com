@@ -9,10 +9,17 @@ import Navbar from '@/components/navbar'
 
 // GatsbyImageSharpFixed_tracedSVG
 
-const Header = () => (
+const Header = ({ location }) => (
   <header className="text-white">
     <div className="p-4 flex flex-col justify-between items-center md:flex-row bg-deft">
-      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }}>
+      <motion.div
+        key={location.pathname}
+        initial={{ rotate: 0, scale: 1, x: -500 }}
+        animate={{ x: 0 }}
+        transition={{ type: 'spring', bounce: 0.25 }}
+        // whileHover={{ scale: 1.1 }}
+        // whileTap={{ scale: 1.2 }}
+      >
         <Link to="/" className="flex items-center justify-center space-x-4">
           <Wire className="h-10 w-10 fill-current text-white tranform rotate-90" />
           <h1 className="font-teko text-6xl whitespace-nowrap uppercase transform translate-y-1">

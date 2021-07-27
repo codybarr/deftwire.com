@@ -10,7 +10,7 @@ const Layout = ({ children, location }) => {
   return (
     <div className="grid grid-rows-[auto,1fr] grid-cols-[1fr] min-h-screen md:h-screen md:min-h-[600px] w-screen">
       <SEO title="Deft Wire" />
-      <Header />
+      <Header location={location} />
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={location.pathname}
@@ -21,7 +21,7 @@ const Layout = ({ children, location }) => {
           {children}
         </motion.div>
       </AnimatePresence>
-      <Footer location={location} />
+      {/* <Footer location={location} /> */}
     </div>
   )
 }
