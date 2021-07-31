@@ -13,7 +13,7 @@ const Header = ({ location }) => (
   <header className="text-white">
     <div className="p-4 flex flex-col justify-between items-center md:flex-row bg-deft">
       <motion.div
-        key={location.pathname}
+        key={location?.pathname}
         initial={{ rotate: 0, scale: 1, x: -500 }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', bounce: 0.25 }}
@@ -27,9 +27,9 @@ const Header = ({ location }) => (
           </h1>
         </Link>
       </motion.div>
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
-    <div className="px-4 py-2 flex flex-col items-start bg-deft-dark">
+    <div className="px-4 py-2 flex flex-col items-center md:items-start bg-deft-dark">
       <span className="font-teko uppercase text-2xl font-bold tracking-wide whitespace-nowrap">
         Drink Fresh, Current, Real News
       </span>

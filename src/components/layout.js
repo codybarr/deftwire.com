@@ -8,7 +8,7 @@ import Footer from '@/components/footer'
 
 const Layout = ({ children, location }) => {
   return (
-    <div className="grid grid-rows-[auto,1fr] grid-cols-[1fr] min-h-screen md:h-screen md:min-h-[600px] w-screen">
+    <div className="grid grid-rows-[auto,1fr] grid-cols-[1fr] h-screen w-screen">
       <SEO title="Deft Wire" />
       <Header location={location} />
       <AnimatePresence exitBeforeEnter>

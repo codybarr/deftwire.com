@@ -20,10 +20,17 @@ module.exports = {
       minWidth: {
         screen: '100vw',
       },
+      gridTemplateRows: {
+        // Simple 10 row grid
+        10: 'repeat(10, minmax(0, 1fr))',
+      },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+  ],
 }

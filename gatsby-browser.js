@@ -8,9 +8,10 @@ import '@fontsource/changa'
 
 import './src/css/index.css'
 
-export const wrapPageElement = ({ element, props }) => (
-  <Layout {...props}>{element}</Layout>
-)
+// export const wrapPageElement = ({ element, props }) => (
+//   // <Layout {...props}>{element}</Layout>
+//   <div {...props}>{element}</div>
+// )
 
 export const onInitialClientRender = () => {
   console.log(
