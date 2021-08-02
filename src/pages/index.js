@@ -8,6 +8,9 @@ import moment from 'moment'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
+const getDomain = (url) =>
+  /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/gi.exec(url)?.[1]
+
 const ExtLink = ({ url, className, children }) => (
   <a
     className={clsx('hover:underline', className)}
@@ -31,13 +34,17 @@ const Post = ({ post, className }) => {
         url={url}
       >
         <GatsbyImage
+          style={{ position: 'absolute' }}
           className="absolute top-0 left-0 h-full w-full object-cover transition duration-300 transform group-hover:scale-110"
           image={image}
           alt={title}
         />
         <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-black flex flex-col justify-end p-4">
           <p className="text-xs tracking-wide italic uppercase">
-            Posted on {moment(date).format('MMMM D, YYYY h:mm a')}
+            <span>Posted on {moment(date).format('MMMM D, YYYY h:mm a')}</span>
+          </p>
+          <p className="bg-deft text-white text-xs rounded-full py-1 px-2 my-2 self-start inline-block font-bold tracking-wider">
+            {getDomain(url)}
           </p>
           <h3 className="group-hover:underline text-2xl line-clamp-3">
             {title}
@@ -51,8 +58,6 @@ const Post = ({ post, className }) => {
 
 const IndexPage = ({ data }) => {
   const [firstPost, secondPost, thirdPost] = data.featuredPosts.nodes
-  console.log(data)
-  // console.log({ featuredPost, secondPost, thirdPost, posts })
 
   return (
     <>
@@ -129,7 +134,7 @@ export const query = graphql`
         }
         localImage {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
       }
@@ -152,7 +157,7 @@ export const query = graphql`
         }
         localImage {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
       }
