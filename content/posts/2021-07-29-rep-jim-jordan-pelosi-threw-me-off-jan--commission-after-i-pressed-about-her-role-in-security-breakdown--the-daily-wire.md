@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:50:41.328Z'
+date: '2021-07-29T03:43:41.328Z'
 tags:
   title: >-
     Rep. Jim Jordan: Pelosi Threw Me Off Jan. 6 Commission After I Pressed About

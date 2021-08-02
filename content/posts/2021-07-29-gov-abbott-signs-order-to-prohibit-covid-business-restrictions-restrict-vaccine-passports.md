@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:55:41.328Z'
+date: '2021-07-29T03:48:41.328Z'
 tags:
   title: >-
     Gov. Abbott Signs Order to Prohibit COVID-19 Business Restrictions, Restrict

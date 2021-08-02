@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:49:41.328Z'
+date: '2021-07-29T03:42:41.328Z'
 tags:
   title: >-
     Biden says White House is exploring a vaccine mandate for all federal

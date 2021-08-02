@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:59:41.328Z'
+date: '2021-07-29T03:52:41.328Z'
 tags:
   title: >-
     (READ) CDC: 74% who got Covid-19 and most who were hospitalized in recent

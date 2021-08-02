@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:53:41.328Z'
+date: '2021-07-29T03:46:41.328Z'
 tags:
   title: >-
     'Come and get me': Defiant Republicans react to 'insane' orders for Capitol

@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:54:41.328Z'
+date: '2021-07-29T03:47:41.328Z'
 tags:
   title: >-
     Biden says federal workers must get vaccinated or face testing, urges $100

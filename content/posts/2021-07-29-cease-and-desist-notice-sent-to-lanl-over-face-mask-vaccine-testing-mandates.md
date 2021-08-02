@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:48:41.328Z'
+date: '2021-07-29T03:41:41.328Z'
 tags:
   title: >-
     Cease and desist notice sent to LANL over face mask, vaccine, testing

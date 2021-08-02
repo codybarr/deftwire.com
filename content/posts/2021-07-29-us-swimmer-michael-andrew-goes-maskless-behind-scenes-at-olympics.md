@@ -1,6 +1,6 @@
 ---
 author: waterboy@crosspolitic.com
-date: '2021-07-29T03:57:41.328Z'
+date: '2021-07-29T03:50:41.328Z'
 tags:
   title: U.S. swimmer Michael Andrew goes maskless behind scenes at Olympics
   description: >-
