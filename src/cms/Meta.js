@@ -67,4 +67,6 @@ export const MetaControl = ({
 }
 
 // This is the preview component
-export const MetaPreview = (props) => <div></div>
+export const MetaPreview = (props) => {
+  return <div>{props.value.get('description')}</div>
+}

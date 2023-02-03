@@ -28,7 +28,7 @@ const Post = ({ post, className }) => {
   const image = getImage(post.localImage)
 
   return (
-    <article className={clsx('w-full h-full bg-red-500 text-white', className)}>
+    <article className={clsx('w-full h-full bg-deft text-white', className)}>
       <ExtLink
         className="group overflow-hidden w-full h-full block relative"
         url={url}
